@@ -108,12 +108,12 @@ stages:
 
   # Reset custom config and run with **initlogs** file config
   - echo "${CUSTOM_CONFIG}" > "${ODOO_RC}/01-custom.ini"
-  - echo "logfile = ${CI_PROJECT_DIR}/logs/init.log" >> "${ODOO_RC}/01-custom.ini"
+  - echo "logfile = ${CI_PROJECT_DIR}/logs/init.log" >> "${ODOO_RC}/config.ini"
   - dodoo init -n "${ODOO_DB_NAME}"
 
   # Reset custom config and run with **testlogs** file config
   - echo "${CUSTOM_CONFIG}" > "${ODOO_RC}/01-custom.ini"
-  - echo "logfile = ${CI_PROJECT_DIR}/logs/test.log" >> "${ODOO_RC}/01-custom.ini"
+  - echo "logfile = ${CI_PROJECT_DIR}/logs/test.log" >> "${ODOO_RC}/config.ini"
 
 .builds:
   stage: Release
